@@ -193,10 +193,9 @@ function winningTeam() {
     // this approach only works because we know the teams are specificaly 'home' and 'away'
     // a more robust approach would need to iterate through the keys of the game object and reduce a total score for each tea
   const homeStats = Object.values(game.home.players); 
-  const awayStats = Object.values(game.away.players); m
+  const awayStats = Object.values(game.away.players);
   const homeScore = homeStats.reduce((total, stat) => total + stat.points, 0);
   const awayScore = awayStats.reduce((total, stat) => total + stat.points, 0);
-  debugger;
   if (homeScore > awayScore) {
     return game.home.teamName;
   } else if (awayScore > homeScore) {
@@ -224,5 +223,3 @@ function doesLongNameStealATon() {
   const longNameSteals = playerStats(playerWithLongestName()).steals;
   return longNameSteals === maxSteals;
 }
-
-debugger;
